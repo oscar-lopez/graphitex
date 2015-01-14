@@ -19,9 +19,7 @@ defmodule Graphitex do
   #####
   # Public API
 
-  def start_link(opts \\ []) do
-    IO.puts " *** carbon host:" <> inspect(@carbon_host)
-    IO.puts " *** carbon port:" <> inspect(@carbon_port)
+  def start_link(_opts \\ []) do
     {:ok, socket} = :gen_tcp.connect(@carbon_host, @carbon_port, [:binary, {:packet, 0}])
     GenServer.start_link(@name, socket, name: @name)
   end
