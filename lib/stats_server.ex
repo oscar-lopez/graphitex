@@ -3,8 +3,8 @@ defmodule StatsServer do
   require Logger
 
   @moduledoc """
-  Collect stats for the chat server service, stored in GenServer state,
-  and periodically sent to the Grafana metrics server.
+  Generic GenServer which collect stats, stores them in the server's state
+  and periodically send them to a Grafana metrics server.
   """
 
   @name              __MODULE__
